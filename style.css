@@ -145,12 +145,6 @@ p, li, td { text-wrap: pretty; }
 .ghost img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
 .ghost figcaption { font-size: .88rem; color: var(--muted); margin-top: 6px; text-align: center; }
 
-/* ---------- Journal covers under the research page title ---------- */
-.covers { margin: 0 0 34px; }
-.covers div { display: flex; gap: 12px; }
-.covers img { display: block; width: 240px; height: auto; border-radius: 4px; box-shadow: 0 3px 10px rgba(95,22,9,.2); }
-.covers figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
-
 /* ---------- Education on the home page ---------- */
 .facts { margin-top: 12px; clear: both; max-width: calc(50% - 24px); }
 .facts h2 { margin-top: 30px; }
