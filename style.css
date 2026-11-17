@@ -23,7 +23,7 @@ a:hover { text-decoration: underline; }
 /* ---------- Sepia header bar (as on the CV) ---------- */
 nav { position: sticky; top: 0; z-index: 10; background: var(--sepia); }
 .nav-inner {
-  max-width: 980px; margin: 0 auto; padding: 0 16px; height: 60px;
+  max-width: 1200px; margin: 0 auto; padding: 0 16px; height: 60px;
   display: flex; align-items: center; justify-content: space-between;
 }
 .brand { color: #fff; font-size: 1.25rem; font-weight: 700; letter-spacing: .01em; }
@@ -47,7 +47,7 @@ nav { position: sticky; top: 0; z-index: 10; background: var(--sepia); }
 }
 
 /* ---------- Page ---------- */
-main { max-width: 980px; margin: 0 auto; padding: 44px 16px 24px; }
+main { max-width: 1200px; margin: 0 auto; padding: 44px 16px 24px; }
 .post-title { font-size: 2.6rem; font-weight: 300; margin: 0 0 2px; line-height: 1.15; color: var(--fg); }
 .post-title b { font-weight: 700; color: var(--accent); }
 .desc { color: var(--muted); margin: 0 0 30px; }
@@ -112,17 +112,17 @@ footer { background: var(--sepia); color: var(--sand); text-align: center; font-
 }
 .profiles a:hover { background: var(--sepia-mid); text-decoration: none; }
 ol.bib li:target { background: var(--soft); }
-ul.see { margin: 6px 0 0; padding-left: 1.2em; font-size: .9rem; }
+ul.see { margin: 6px 0 0; padding-left: 1.2em; font-size: .88rem; }
 ul.see li { margin-bottom: 3px; }
 
 /* ---------- Oscillation cartoon ---------- */
 .topic { display: flow-root; }
-.cartoon { float: right; width: 210px; max-width: 45%; margin: 4px 0 10px 28px; }
+.cartoon { float: right; width: 320px; max-width: 45%; margin: 4px 0 10px 28px; }
 @media (max-width: 640px) {
-  .cartoon { float: none; width: 100%; max-width: 210px; margin: 10px 0 12px; }
+  .cartoon { float: none; width: 100%; max-width: 320px; margin: 10px 0 12px; }
 }
-.cartoon img, .cartoon video { display: block; width: 100%; max-width: 210px; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
-.cartoon figcaption { max-width: 210px; font-size: .88rem; line-height: 1.4; color: var(--muted); margin-top: 6px; }
+.cartoon img, .cartoon video { display: block; width: 100%; max-width: 320px; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.cartoon figcaption { max-width: 320px; font-size: .88rem; line-height: 1.4; color: var(--muted); margin-top: 6px; }
 
 /* ---------- Media page ---------- */
 .outlet { font-size: .9rem; color: var(--muted); }
@@ -135,3 +135,39 @@ p, li, td { text-wrap: pretty; }
 .see .ref { white-space: nowrap; }
 .see li { text-wrap: balance; }
 .cartoon .credit { display: block; font-size: .8rem; margin-top: 2px; }
+
+/* Distinction tags after a journal reference (cover, Editors' Suggestion) */
+.see .tag { white-space: nowrap; font-style: italic; font-size: .92em; }
+.see .tag::before { content: "\00b7\00a0"; font-style: normal; }
+
+/* ---------- Ghost cartoon on the home page ---------- */
+.ghost { margin: 34px auto 0; clear: both; max-width: 560px; }
+.ghost img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.ghost figcaption { font-size: .88rem; color: var(--muted); margin-top: 6px; text-align: center; }
+
+/* ---------- Journal covers under the research page title ---------- */
+.covers { margin: 0 0 34px; }
+.covers div { display: flex; gap: 12px; }
+.covers img { display: block; width: 240px; height: auto; border-radius: 4px; box-shadow: 0 3px 10px rgba(95,22,9,.2); }
+.covers figcaption { font-size: .85rem; color: var(--muted); margin-top: 8px; }
+
+/* ---------- Education on the home page ---------- */
+.facts { margin-top: 12px; clear: both; max-width: calc(50% - 24px); }
+.facts h2 { margin-top: 30px; }
+.facts ul { list-style: none; padding: 0; margin: 0; }
+.facts li { margin-bottom: 12px; line-height: 1.5; }
+.facts li b { font-weight: 600; }
+@media (max-width: 760px) { .facts { max-width: none; } }
+
+/* ---------- Sections with a figure: text and figure side by side, same height, no wrapping ---------- */
+.topic { display: flow-root; clear: both; }
+.topic.has-fig { display: grid; grid-template-columns: minmax(0, 1fr) var(--figw, 240px); column-gap: 28px; }
+.topic.has-fig .topic-text { display: flex; flex-direction: column; }
+.topic.has-fig .topic-text ul.see { margin-top: auto; padding-top: 6px; }
+.topic.has-fig .cartoon { float: none; width: auto; max-width: none; margin: 4px 0 0; }
+.topic.has-fig .cartoon img, .topic.has-fig .cartoon figcaption { max-width: none; }
+.topic.has-fig .cartoon .credit { display: inline; font-size: inherit; margin: 0; }
+@media (max-width: 640px) {
+  .topic.has-fig { display: block; }
+  .topic.has-fig .cartoon { margin: 10px 0 0; max-width: 320px; }
+}
