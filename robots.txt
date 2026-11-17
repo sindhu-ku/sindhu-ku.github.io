@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://sindhujhakumaran.com/sitemap.xml
